@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Created by ModBuddy on 7/30/2013 12:26:24 AM -->
-<GameData>
-	<Language_en_US>
-		<Row Tag="TXT_KEY_NO_ACTION_AIR_STACKING_LIMIT">
-			<Text>[NEWLINE]This city can't hold more than {1_Num} aircraft.</Text>
-		</Row>
-	</Language_en_US>
-</GameData>

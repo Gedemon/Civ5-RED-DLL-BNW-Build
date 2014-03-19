@@ -5,10 +5,10 @@
     <ProjectGuid>{6b94aec8-0fc5-41a7-afa0-f09f2d1b53c8}</ProjectGuid>
     <Name>R.E.D. DLL</Name>
     <Guid>2896c6d4-0273-4527-813b-b9ab58f0b95e</Guid>
-    <ModVersion>7</ModVersion>
+    <ModVersion>8</ModVersion>
     <Stability>Alpha</Stability>
-    <Teaser>R.E.D. Modded DLL for BNW</Teaser>
-    <Description>R.E.D. Modded DLL for Brave New World</Description>
+    <Teaser>[COLOR_PLAYER_PEACH]    R.E.D. Modded DLL for BNW[NEWLINE][ENDCOLOR]    Combat events, Culture Diffusion, Revolutions, ...</Teaser>
+    <Description>[COLOR_PLAYER_LIGHT_GREEN_TEXT]R.E.D. Modded DLL for Brave New World[ENDCOLOR][NEWLINE][NEWLINE][ICON_WAR]  Combat Events[NEWLINE][ICON_ARROW_RIGHT]  Stacking and Movement[NEWLINE][ICON_CULTURE]  Culture Diffusion[NEWLINE][ICON_RESISTANCE]  Revolutions[NEWLINE][ICON_RESEARCH]  Tech Diffusion[NEWLINE][ICON_INTERNATIONAL_TRADE]  Air Trade Routes[NEWLINE][NEWLINE]Additional mods are required to activate some components.[NEWLINE][ICON_BULLET][COLOR_PLAYER_PEACH]Combat &amp; Stacking Overhaul[ENDCOLOR][NEWLINE]      Activate Support Fire, Limited Stacking, Retreat,...</Description>
     <Authors>Gedemon</Authors>
     <SpecialThanks>whoward69</SpecialThanks>
     <AffectsSavedGames>true</AffectsSavedGames>
@@ -24,20 +24,38 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>SQL/Database.sql</FileName>
+        <FileName>_XML/Options.xml</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>XML/Options.xml</FileName>
+        <FileName>_XML/Texts.xml</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>XML/Texts.xml</FileName>
+        <FileName>_SQL/Database.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Cultural Diffusion/XML/CultureTexts.xml</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Cultural Diffusion/SQL/CultureDefines.sql</FileName>
       </Action>
     </ModActions>
     <ModProperties />
+    <ModContent>
+      <Content>
+        <Type>InGameUIAddin</Type>
+        <Name>Culture Diffusion</Name>
+        <Description>Culture Diffusion</Description>
+        <FileName>Cultural Diffusion/Lua/CultureIGAddin.lua</FileName>
+      </Content>
+    </ModContent>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">
     <OutputPath>.</OutputPath>
@@ -51,26 +69,66 @@
     <DeployMod>true</DeployMod>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="Cultural Diffusion\Lua\CultureDebug.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Cultural Diffusion\Lua\CultureDefines.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Cultural Diffusion\Lua\CultureMain.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Cultural Diffusion\Lua\CultureIGAddin.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Cultural Diffusion\Lua\CultureUIFunctions.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Cultural Diffusion\Lua\CultureUtils.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Cultural Diffusion\SQL\CultureDefines.sql">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Cultural Diffusion\XML\CultureOptions.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Cultural Diffusion\XML\CultureTexts.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
     <Content Include="CvGameCore_Expansion2.dll">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="SQL\Database.sql">
+    <Content Include="_SQL\Database.sql">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="XML\Options.xml">
+    <Content Include="_XML\Options.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="XML\Texts.xml">
+    <Content Include="_XML\Texts.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="SQL" />
-    <Folder Include="XML" />
+    <Folder Include="Cultural Diffusion" />
+    <Folder Include="Cultural Diffusion\Lua" />
+    <Folder Include="Cultural Diffusion\SQL" />
+    <Folder Include="Cultural Diffusion\XML" />
+    <Folder Include="_SQL" />
+    <Folder Include="_XML" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Firaxis\ModBuddy\Civ5Mod.targets" />
 </Project>

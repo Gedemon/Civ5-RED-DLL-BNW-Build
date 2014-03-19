@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ****************** -->
+<!-- R.E.D. DLL Options -->
+<!--   Gedemon (2013)   -->
+<!-- ****************** -->
+<GameData>
+
+	<!-- GAMEOPTION_CAN_STACK_IN_CITY -->
+	<GameOptions>
+		<Row>
+			<Type>GAMEOPTION_CAN_STACK_IN_CITY</Type>
+			<Description>TXT_KEY_GAME_OPTION_CAN_STACK_IN_CITY</Description>
+			<Help>TXT_KEY_GAME_OPTION_CAN_STACK_IN_CITY_HELP</Help>
+		</Row>
+	</GameOptions>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_GAME_OPTION_CAN_STACK_IN_CITY">
+			<Text>RED DLL: Unlimited stacking in cities</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_CAN_STACK_IN_CITY_HELP">
+			<Text>Unlimited number of units in cities. (You can't melee attack from a city if there are multiple units in it, but you can range attack, which can be OP in defense.)</Text>
+		</Row>
+	</Language_en_US>
+
+	<!-- GAMEOPTION_CAN_ENTER_FOREIGN_CITY -->
+	<GameOptions>
+		<Row>
+			<Type>GAMEOPTION_CAN_ENTER_FOREIGN_CITY</Type>
+			<Description>TXT_KEY_GAME_OPTION_CAN_ENTER_FOREIGN_CITY</Description>
+			<Help>TXT_KEY_GAME_OPTION_CAN_ENTER_FOREIGN_CITY_HELP</Help>
+		</Row>
+	</GameOptions>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_GAME_OPTION_CAN_ENTER_FOREIGN_CITY">
+			<Text>RED DLL: Open foreign city</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_CAN_ENTER_FOREIGN_CITY_HELP">
+			<Text>Your units can enter any foreign city if you have an open border agreement.</Text>
+		</Row>
+	</Language_en_US>
+
+	<!-- GAMEOPTION_REBASE_IN_FRIENDLY_CITY -->
+	<GameOptions>
+		<Row>
+			<Type>GAMEOPTION_REBASE_IN_FRIENDLY_CITY</Type>
+			<Description>TXT_KEY_GAME_OPTION_REBASE_IN_FRIENDLY_CITY</Description>
+			<Help>TXT_KEY_GAME_OPTION_REBASE_IN_FRIENDLY_CITY_HELP</Help>
+		</Row>
+	</GameOptions>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_GAME_OPTION_REBASE_IN_FRIENDLY_CITY">
+			<Text>RED DLL: Rebase in foreign city</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_REBASE_IN_FRIENDLY_CITY_HELP">
+			<Text>Your aircraft can rebase in any foreign city if you have an open border agreement.</Text>
+		</Row>
+	</Language_en_US>
+
+	<!-- GAMEOPTION_CIVILIAN_MOVE_THROUGH -->
+	<GameOptions>
+		<Row>
+			<Type>GAMEOPTION_CIVILIAN_MOVE_THROUGH</Type>
+			<Description>TXT_KEY_GAME_OPTION_CIVILIAN_MOVE_THROUGH</Description>
+			<Help>TXT_KEY_GAME_OPTION_CIVILIAN_MOVE_THROUGH_HELP</Help>
+		</Row>
+	</GameOptions>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_GAME_OPTION_CIVILIAN_MOVE_THROUGH">
+			<Text>RED DLL: Civilian move through</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_CIVILIAN_MOVE_THROUGH_HELP">
+			<Text>Civilian units can move through foreign units like any military unit.</Text>
+		</Row>
+	</Language_en_US>
+
+	<!-- GAMEOPTION_BEST_DEFENDER_BY_HEALTH -->
+	<GameOptions>
+		<Row>
+			<Type>GAMEOPTION_BEST_DEFENDER_BY_HEALTH</Type>
+			<Description>TXT_KEY_GAME_OPTION_BEST_DEFENDER_BY_HEALTH</Description>
+			<Help>TXT_KEY_GAME_OPTION_BEST_DEFENDER_BY_HEALTH_HELP</Help>
+		</Row>
+	</GameOptions>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_GAME_OPTION_BEST_DEFENDER_BY_HEALTH">
+			<Text>RED DLL: Use health to get the best defender</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_BEST_DEFENDER_BY_HEALTH_HELP">
+			<Text>When stacking is allowed, the combat engine will pick the unit that will have the most Health left after the attack to defend the plot. If unchecked, the unit with the best fighting strengh is used (even if it has only 1 HP left)</Text>
+		</Row>
+	</Language_en_US>
+
+	<!-- GAMEOPTION_OFFENSIVE_SUPPORT_FIRE -->
+	<GameOptions>
+		<Row>
+			<Type>GAMEOPTION_OFFENSIVE_SUPPORT_FIRE</Type>
+			<Description>TXT_KEY_GAME_OPTION_OFFENSIVE_SUPPORT_FIRE</Description>
+			<Help>TXT_KEY_GAME_OPTION_OFFENSIVE_SUPPORT_FIRE_HELP</Help>
+		</Row>
+	</GameOptions>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_GAME_OPTION_OFFENSIVE_SUPPORT_FIRE">
+			<Text>RED DLL: Allow offensive support fire</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_OFFENSIVE_SUPPORT_FIRE_HELP">
+			<Text>Units tagged "OffensiveSupportFire" by a mod will be able to perform a first strike ranged attack to support the attack of a nearby melee unit.</Text>
+		</Row>
+	</Language_en_US>
+
+	<!-- GAMEOPTION_DEFENSIVE_SUPPORT_FIRE -->
+	<GameOptions>
+		<Row>
+			<Type>GAMEOPTION_DEFENSIVE_SUPPORT_FIRE</Type>
+			<Description>TXT_KEY_GAME_OPTION_DEFENSIVE_SUPPORT_FIRE</Description>
+			<Help>TXT_KEY_GAME_OPTION_DEFENSIVE_SUPPORT_FIRE_HELP</Help>
+		</Row>
+	</GameOptions>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_GAME_OPTION_DEFENSIVE_SUPPORT_FIRE">
+			<Text>RED DLL: Allow defensive support fire</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_DEFENSIVE_SUPPORT_FIRE_HELP">
+			<Text>Units tagged "DefensiveSupportFire" by a mod will be able to perform a first strike ranged attack to counter the attack of a nearby enemy melee unit.</Text>
+		</Row>
+	</Language_en_US>
+
+	<!-- GAMEOPTION_COUNTER_FIRE -->
+	<GameOptions>
+		<Row>
+			<Type>GAMEOPTION_COUNTER_FIRE</Type>
+			<Description>TXT_KEY_GAME_OPTION_COUNTER_FIRE</Description>
+			<Help>TXT_KEY_GAME_OPTION_COUNTER_FIRE_HELP</Help>
+		</Row>
+	</GameOptions>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_GAME_OPTION_COUNTER_FIRE">
+			<Text>RED DLL: Allow counter fire</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_COUNTER_FIRE_HELP">
+			<Text>Units tagged "CounterFire" by a mod will be able to perform a counter fire ranged attack against the attack of a nearby enemy ranged unit.</Text>
+		</Row>
+	</Language_en_US>
+
+	<!-- GAMEOPTION_CULTURE_DIFFUSION -->
+	<GameOptions>
+		<Row>
+			<Type>GAMEOPTION_CULTURE_DIFFUSION</Type>
+			<Description>TXT_KEY_GAMEOPTION_CULTURE_DIFFUSION</Description>
+			<Help>TXT_KEY_GAMEOPTION_CULTURE_DIFFUSION_HELP</Help>
+			<Default>false</Default>
+		</Row>
+	</GameOptions>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_GAMEOPTION_CULTURE_DIFFUSION">
+			<Text>RED DLL: Use Culture Diffusion</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAMEOPTION_CULTURE_DIFFUSION_HELP">
+			<Text>Activate Culture Diffusion, see [COLOR_CYAN]CultureDefines.sql[ENDCOLOR] in "..\Documents\my games\Sid Meier's Civilization 5\MODS\R.E.D. DLL (v 8)\Cultural Diffusion\SQL" for configuration.</Text>
+		</Row>
+	</Language_en_US>
+
+
+	<!-- GAMEOPTION_DOUBLE_EMBARKED_DEFENSE_AGAINST_AIR -->
+	<GameOptions>
+		<!--<Row>
+			<Type>GAMEOPTION_DOUBLE_EMBARKED_DEFENSE_AGAINST_AIR</Type>
+			<Description>TXT_KEY_GAME_OPTION_DOUBLE_EMBARKED_DEFENSE_AGAINST_AIR</Description>
+			<Help>TXT_KEY_GAME_OPTION_DOUBLE_EMBARKED_DEFENSE_AGAINST_AIR_HELP</Help>
+		</Row> -->
+	</GameOptions>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_GAME_OPTION_DOUBLE_EMBARKED_DEFENSE_AGAINST_AIR">
+			<Text>RED DLL: Embarked units defense vs aircraft</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_DOUBLE_EMBARKED_DEFENSE_AGAINST_AIR_HELP">
+			<Text>Double embarked units defense against all air attacks.</Text>
+		</Row>
+	</Language_en_US>
+	
+</GameData>
