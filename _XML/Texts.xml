@@ -26,5 +26,9 @@
 		<Replace Tag="TXT_KEY_MISC_YOU_GET_DEFENSIVE_SUPPORT">
 			<Text>Your {@1_UnitName} was able to provide [COLOR_POSITIVE_TEXT]Counter-Preparation Fire[ENDCOLOR] against an enemy {@2_EnUName} attack!</Text>
 		</Replace>
+
+		<Replace Tag="TXT_KEY_MISC_LIBERATE_MINOR_PLOT_BONUS">
+			<Text>You gain [COLOR_POSITIVE_TEXT]{1_Num}[ENDCOLOR] [ICON_INFLUENCE] with {@2_MinorCivName} from liberating it's territory.</Text>
+		</Replace>
 	</Language_en_US>
 </GameData>

@@ -159,7 +159,42 @@
 		</Row>
 	</Language_en_US>
 
+	<!-- GAMEOPTION_GROUPED_DIPLO_AI -->
+	<GameOptions>
+		<Row>
+			<Type>GAMEOPTION_GROUPED_DIPLO_AI</Type>
+			<Description>TXT_KEY_GAMEOPTION_GROUPED_DIPLO_AI</Description>
+			<Help>TXT_KEY_GAMEOPTION_GROUPED_DIPLO_AI_HELP</Help>
+			<Default>false</Default>
+		</Row>
+	</GameOptions>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_GAMEOPTION_GROUPED_DIPLO_AI">
+			<Text>RED DLL: Group Diplomatic AI contact</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAMEOPTION_GROUPED_DIPLO_AI_HELP">
+			<Text>AI players will contact Human players for trade at the begining of the turn, not during the AI turns.</Text>
+		</Row>
+	</Language_en_US>
 
+	<!-- GAMEOPTION_MINOR_CAN_ENTER_ALLY_TERRITORY -->
+	<GameOptions>
+		<Row>
+			<Type>GAMEOPTION_MINOR_CAN_ENTER_ALLY_TERRITORY</Type>
+			<Description>TXT_KEY_GAMEOPTION_MINOR_CAN_ENTER_ALLY_TERRITORY</Description>
+			<Help>TXT_KEY_GAMEOPTION_MINOR_CAN_ENTER_ALLY_TERRITORY_HELP</Help>
+			<Default>false</Default>
+		</Row>
+	</GameOptions>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_GAMEOPTION_MINOR_CAN_ENTER_ALLY_TERRITORY">
+			<Text>RED DLL: City-States can enter Ally Territory</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAMEOPTION_MINOR_CAN_ENTER_ALLY_TERRITORY_HELP">
+			<Text>City-states units will be allowed to enter (and gain visibility on) their ally territory so they can help during wars.</Text>
+		</Row>
+	</Language_en_US>
+	
 	<!-- GAMEOPTION_DOUBLE_EMBARKED_DEFENSE_AGAINST_AIR -->
 	<GameOptions>
 		<!--<Row>

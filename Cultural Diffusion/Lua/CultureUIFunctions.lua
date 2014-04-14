@@ -36,7 +36,7 @@ function GetCulturePlotHelpString(plot)
 
 	local totalCulture = plot:GetTotalCulture()
 	if (totalCulture > 0) then -- don't mess with the universe
-		AddedString = AddedString .. "[NEWLINE]Culture : " .. GetCultureValueString(totalCulture) .. " [ICON_CULTURE]"
+		AddedString = AddedString .. "[NEWLINE]----------[NEWLINE]Culture : " .. GetCultureValueString(totalCulture) .. " [ICON_CULTURE]"
 		if ( DEBUG_SHOW_PLOT_CULTURE ) then
 			AddedString = AddedString .. " (" .. totalCulture .. ") at Plot (" .. tostring(GetPlotKey ( plot )) .. ")"
 		end
@@ -77,6 +77,73 @@ function GetCulturePlotHelpString(plot)
 			AddedString = AddedString .. "[NEWLINE]" .. tostring(other) .. "% Other cultures"
 		end
 	end
+	
+	local potentialOwnerID = plot:GetPotentialOwner()
+	local ownerID = plot:GetOwner()
+
+	if potentialOwnerID ~= plotCulture[1].ID and plotCulture[1].ID ~= ownerID then 
+		-- plotCulture[1].ID is the playerID with the highest culture on the plot after sorting the table, if it's different than 
+		-- potentialOwnerID then CULTURE_FLIPPING_ONLY_ADJACENT is true and this plot is not adjacent to the highest culture territory
+		-- as GetPotentialOwner() take that parameter into account
+		local statutText = "locked"
+		if Game.GetActivePlayer() == plotCulture[1].ID then
+			statutText = "[COLOR_NEGATIVE_TEXT]locked[ENDCOLOR]"
+		elseif Game.GetActivePlayer() == plot:GetOwner() then			
+			statutText = "[COLOR_POSITIVE_TEXT]locked[ENDCOLOR]"
+		end
+
+		local pPlayer = Players[plotCulture[1].ID]
+		if pPlayer and pPlayer:IsAlive() then
+			AddedString = AddedString .. "[NEWLINE]----------[NEWLINE]Highest culture : " .. tostring(pPlayer:GetCivilizationShortDescription())
+			AddedString = AddedString .. "[NEWLINE][ICON_LOCKED]"..statutText..", not adjacent to " .. tostring(pPlayer:GetCivilizationAdjective()).." territory"
+		end
+	end
+
+	if potentialOwnerID ~= ownerID and not plot:IsCity() then
+
+		local pPlayer = Players[potentialOwnerID]
+
+		local statutText = "locked"
+		if Game.GetActivePlayer() == potentialOwnerID then
+			statutText = "[COLOR_NEGATIVE_TEXT]locked[ENDCOLOR]"
+		elseif Game.GetActivePlayer() == plot:GetOwner() then			
+			statutText = "[COLOR_POSITIVE_TEXT]locked[ENDCOLOR]"
+		end
+
+		if pPlayer and pPlayer:IsAlive() then
+
+			AddedString = AddedString .. "[NEWLINE]----------[NEWLINE]Potential owner : " .. tostring(pPlayer:GetCivilizationShortDescription())
+
+			if plot:GetConquestCountDown() > 0 then				
+				AddedString = AddedString .. "[NEWLINE][ICON_LOCKED]"..statutText.." for " .. tostring(plot:GetConquestCountDown()) .." turn(s) by military conquest"
+			end
+
+			if plot:IsLockedByFortification() then				
+				AddedString = AddedString .. "[NEWLINE][ICON_LOCKED]"..statutText.." by fortification"
+			end
+
+			if plot:IsLockedByWarForPlayer(potentialOwnerID) then				
+				AddedString = AddedString .. "[NEWLINE][ICON_LOCKED]"..statutText..", at war with current owner"
+			end
+
+			if plot:IsLockedByCitadelForPlayer(potentialOwnerID) then				
+				AddedString = AddedString .. "[NEWLINE][ICON_LOCKED]"..statutText.." by adjacent citadel"
+			end
+
+			if plot:GetCulture(potentialOwnerID) < pPlayer:GetCultureMinimumForAcquisition() then
+				AddedString = AddedString .. "[NEWLINE][ICON_LOCKED]"..statutText.." by poor [ICON_CULTURE] on plot (" .. tostring(Round(plot:GetCulture(potentialOwnerID)/pPlayer:GetCultureMinimumForAcquisition()*100)) .." % of minimum [ICON_CULTURE])"
+			end
+
+			if (plot:GetCulture(potentialOwnerID)*GameDefines.CULTURE_FLIPPING_RATIO/100) <= plot:GetCulture(ownerID) then
+				local pOwner = Players[ownerID]
+				if pOwner then
+					AddedString = AddedString .. "[NEWLINE][ICON_LOCKED]"..statutText.." from [ICON_CULTURE] ratio of " .. tostring(pOwner:GetCivilizationShortDescription()).. " (" .. tostring(Round(plot:GetCulture(plot:GetOwner())/plot:GetCulture(potentialOwnerID)*100)) .."% > " .. tostring(GameDefines.CULTURE_FLIPPING_RATIO) .."%)"
+				end
+			end
+
+		end
+	end
+
 	return AddedString
 end
 

@@ -117,11 +117,13 @@ INSERT INTO Defines (Name, Value) VALUES ('CULTURE_CONQUEST_ENABLED',			1);		-- 
 INSERT INTO Defines (Name, Value) VALUES ('CULTURE_MINIMAL_FOR_CONQUEST',		150);	-- minimum value of the unit culture on the plot to allow flipping. Overriden by CULTURE_CONQUEST_EVEN_NONE', 1);
 INSERT INTO Defines (Name, Value) VALUES ('CULTURE_CONQUEST_EVEN_LOWER',		1);		-- conquest tile even without having more culture on it than it's current owner
 INSERT INTO Defines (Name, Value) VALUES ('CULTURE_CONQUEST_EVEN_NONE',			1);		-- conquest tile even without having any culture on it. CULTURE_CONQUEST_EVEN_LOWER must be set to true if you want to activate this one
-INSERT INTO Defines (Name, Value) VALUES ('CULTURE_LOCKED_TURN_ON_CONQUEST',	15);	-- number of turns the tile is locked when conquered
+INSERT INTO Defines (Name, Value) VALUES ('CULTURE_LOCKED_TURN_ON_CONQUEST',	10);	-- number of turns the tile is locked when conquered
 INSERT INTO Defines (Name, Value) VALUES ('CULTURE_CONQUEST_ONLY_ADJACENT',		1);		-- conquest tile only if adjacent to an already owned tile
 INSERT INTO Defines (Name, Value) VALUES ('CULTURE_LOCK_FLIPPING_ON_WAR',		1);		-- prevent cultural tile flipping between 2 civilizations at war
 INSERT INTO Defines (Name, Value) VALUES ('CULTURE_LOST_PLOT_CONQUEST',			10);	-- percentage of culture lost by each civs on a plot on conquest
 INSERT INTO Defines (Name, Value) VALUES ('CULTURE_GAIN_PLOT_CONQUEST',			50);	-- percentage of the total lost culture gained by the conqueror
+INSERT INTO Defines (Name, Value) VALUES ('CULTURE_LIBERATE_PLOT_ENABLED',		1);		-- allow liberation of another civilization plot (that civilization must be at war with the current owner, have the most culture on the plot and is at peace with the unit owner)
+INSERT INTO Defines (Name, Value) VALUES ('CULTURE_LIBERATE_PLOT_CS_BONUS',		5);		-- influence gained with a CS when liberating one of it's plots
 
 ------------------------------------------------------------------------------------------------------------------------
 --
