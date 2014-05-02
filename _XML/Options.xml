@@ -211,5 +211,75 @@
 			<Text>Double embarked units defense against all air attacks.</Text>
 		</Row>
 	</Language_en_US>
+
+	<!-- GAMEOPTION_REVOLUTION -->
+	<GameOptions>
+		<Row>
+			<Type>GAMEOPTION_REVOLUTION</Type>
+			<Description>TXT_KEY_GAMEOPTION_REVOLUTION</Description>
+			<Help>TXT_KEY_GAMEOPTION_REVOLUTION_HELP</Help>
+			<Default>false</Default>
+		</Row>
+	</GameOptions>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_GAMEOPTION_REVOLUTION">
+			<Text>RED DLL: Use Revolutions</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAMEOPTION_REVOLUTION_HELP">
+			<Text>Activate Revolutions, see [COLOR_CYAN]RevolutionDefines.sql[ENDCOLOR] in "..\Documents\my games\Sid Meier's Civilization 5\MODS\R.E.D. DLL (v 8)\Revolutions\SQL" for configuration.</Text>
+		</Row>
+	</Language_en_US>
 	
+	<!-- GAMEOPTION_REVOLUTION_SPAWN_NEW_CS -->
+	<GameOptions>
+		<Row>
+			<Type>GAMEOPTION_REVOLUTION_SPAWN_NEW_CS</Type>
+			<Description>TXT_KEY_GAME_OPTION_REVOLUTION_SPAWN_NEW_CS</Description>
+			<Help>TXT_KEY_GAME_OPTION_REVOLUTION_SPAWN_NEW_CS_HELP</Help>
+			<Default>true</Default>
+		</Row>
+	</GameOptions>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_GAME_OPTION_REVOLUTION_SPAWN_NEW_CS">
+			<Text>Revolution: Can spawn new City-States</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_REVOLUTION_SPAWN_NEW_CS_HELP">
+			<Text>After a Revolution, a city can be transformed into a new city-State if not under the influence of another Civilization.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_ru_RU>
+		<Row Tag="TXT_KEY_GAME_OPTION_REVOLUTION_SPAWN_NEW_CS">
+			<Text>Революция: независимые города</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_REVOLUTION_SPAWN_NEW_CS_HELP">
+			<Text>После совершения революции город может обяъвить о своей независимости в качестве города-государства, если он не подпал под влияние другой цивилизации.</Text>
+		</Row>
+	</Language_ru_RU>
+
+	<!-- GAMEOPTION_REVOLUTION_RAGING_REBELS -->
+	<GameOptions>
+		<Row>
+			<Type>GAMEOPTION_REVOLUTION_RAGING_REBELS</Type>
+			<Description>TXT_KEY_GAME_OPTION_REVOLUTION_RAGING_REBELS</Description>
+			<Help>TXT_KEY_GAME_OPTION_REVOLUTION_RAGING_REBELS_HELP</Help>
+			<Default>true</Default>
+		</Row>
+	</GameOptions>
+	<Language_en_US>
+		<Row Tag="TXT_KEY_GAME_OPTION_REVOLUTION_RAGING_REBELS">
+			<Text>Revolution: Raging Rebels</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_REVOLUTION_RAGING_REBELS_HELP">
+			<Text>The rate of Revolts (city resistance), Rebellions (rebels spawning) and Revolutions (city flipping) is greatly increased.</Text>
+		</Row>
+	</Language_en_US>
+	<Language_ru_RU>
+		<Row Tag="TXT_KEY_GAME_OPTION_REVOLUTION_RAGING_REBELS">
+			<Text>Революция: неспокойный мир</Text>
+		</Row>
+		<Row Tag="TXT_KEY_GAME_OPTION_REVOLUTION_RAGING_REBELS_HELP">
+			<Text>Вероятность забастовок, вооруженных восстаний и революций значительно повышается.</Text>
+		</Row>
+	</Language_ru_RU>
+
 </GameData>

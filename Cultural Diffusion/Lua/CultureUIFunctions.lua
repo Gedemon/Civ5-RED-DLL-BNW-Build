@@ -32,7 +32,9 @@ function GetCulturePlotHelpString(plot)
 	local AddedString = ""
 
 	-- this will load from revolution mod...-
-	local bShowRevolutionInfo = false
+	local bShowRevolutionInfo = (GameDefines.REVOLUTION_ENABLED > 0) or Game.IsOption("GAMEOPTION_REVOLUTION")
+	local cultureRelations = MapModData.AH.CultureRelations or {}
+	local ownerID = plot:GetOwner()
 
 	local totalCulture = plot:GetTotalCulture()
 	if (totalCulture > 0) then -- don't mess with the universe
@@ -46,12 +48,8 @@ function GetCulturePlotHelpString(plot)
 			if (i <= CULTURE_MAX_LINE_UI) and (plotCulture[i].Value > 0) then
 				
 				local pPlayer = Players[playerID]
-				local civAdj = ""
-				if pPlayer and pPlayer:IsEverAlive() then
-					civAdj = pPlayer:GetCivilizationAdjective()
-				else
-					civAdj = "unknown"
-				end
+				local civAdj = GetCultureTypeAdj(playerID)
+
 				AddedString = AddedString .. "[NEWLINE]" .. tostring(plot:GetCulturePercent(playerID)) .. "%  " .. civAdj
 
 				if CULTURE_SHOW_VARIATION and plot:GetCulturePer10000(playerID) < 10000 then -- show variation only when there are more than 1 culture on the plot
@@ -65,8 +63,8 @@ function GetCulturePlotHelpString(plot)
 					end
 				end
 
-				if bShowRevolutionInfo and cultureRelations[owner][cultureID] then
-					AddedString = AddedString .. "  (" .. GetRelationValueString(cultureRelations[owner][cultureID]) .. ")"
+				if bShowRevolutionInfo and cultureRelations[ownerID] and cultureRelations[ownerID][playerID] then
+					AddedString = AddedString .. "  (" .. GetRelationValueString(cultureRelations[ownerID][playerID]) .. ")"
 				end
 			else
 				other = other + plot:GetCulturePercent(playerID)

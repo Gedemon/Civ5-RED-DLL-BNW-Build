@@ -39,12 +39,12 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Cultural Diffusion/XML/CultureTexts.xml</FileName>
+        <FileName>Cultural Diffusion/SQL/CultureDefines.sql</FileName>
       </Action>
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
-        <FileName>Cultural Diffusion/SQL/CultureDefines.sql</FileName>
+        <FileName>Revolutions/RevolutionDefines.sql</FileName>
       </Action>
     </ModActions>
     <ModProperties />
@@ -54,6 +54,18 @@
         <Name>Culture Diffusion</Name>
         <Description>Culture Diffusion</Description>
         <FileName>Cultural Diffusion/Lua/CultureIGAddin.lua</FileName>
+      </Content>
+      <Content>
+        <Type>InGameUIAddin</Type>
+        <Name>Revolution</Name>
+        <Description>Revolution</Description>
+        <FileName>Revolutions/Lua/RevolutionIGAddin.lua</FileName>
+      </Content>
+      <Content>
+        <Type>InGameUIAddin</Type>
+        <Name>ShareData</Name>
+        <Description>ShareData</Description>
+        <FileName>Revolutions/Lua/ShareData.lua</FileName>
       </Content>
     </ModContent>
   </PropertyGroup>
@@ -97,17 +109,89 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Cultural Diffusion\XML\CultureOptions.xml">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>False</ImportIntoVFS>
-    </Content>
-    <Content Include="Cultural Diffusion\XML\CultureTexts.xml">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>False</ImportIntoVFS>
-    </Content>
     <Content Include="CvGameCore_Expansion2.dll">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Revolutions\Art\ancient_revolution.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Revolutions\Art\industrial_revolution.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Revolutions\Art\modern_revolution.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Revolutions\Art\renaissance_revolution.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Revolutions\Lua\RevolutionDebug.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Revolutions\Lua\RevolutionDefines.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Revolutions\Lua\RevolutionFunctions.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Revolutions\Lua\RevolutionIGAddin.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Revolutions\Lua\RevolutionMain.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Revolutions\Lua\RevolutionUtils.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Revolutions\Lua\RouteConnections.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Revolutions\Lua\SaveUtils.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Revolutions\Lua\ShareData.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Revolutions\RevolutionDefines.sql">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Revolutions\UI\RevolutionInfos.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Revolutions\UI\RevolutionInfos.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Revolutions\UI\RevolutionIGAddin.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Revolutions\UI\RevolutionInfosMain.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Revolutions\XML\LevelHappinessHandicaps.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Revolutions\XML\Texts.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
     <Content Include="_SQL\Database.sql">
       <SubType>Lua</SubType>
@@ -127,6 +211,12 @@
     <Folder Include="Cultural Diffusion\Lua" />
     <Folder Include="Cultural Diffusion\SQL" />
     <Folder Include="Cultural Diffusion\XML" />
+    <Folder Include="Revolutions" />
+    <Folder Include="Revolutions\Art" />
+    <Folder Include="Revolutions\Lua" />
+    <Folder Include="Revolutions\SQL" />
+    <Folder Include="Revolutions\UI" />
+    <Folder Include="Revolutions\XML" />
     <Folder Include="_SQL" />
     <Folder Include="_XML" />
   </ItemGroup>

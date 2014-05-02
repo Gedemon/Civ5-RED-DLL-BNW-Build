@@ -10,6 +10,7 @@
 INSERT INTO Defines (Name, Value) VALUES ('CULTURE_DEBUG',				0); -- if true will output debug text in the lua.log / firetuner console.
 INSERT INTO Defines (Name, Value) VALUES ('CULTURE_DEBUG_SHOW_PLOT',	1); -- if true will show the culture value and coordinate of a plot
 INSERT INTO Defines (Name, Value) VALUES ('CULTURE_DEBUG_PERFORMANCE',	0); -- if true will outpout time taken by some functions to the lua.log / firetuner console.
+
 --------------------------------------------------------------
 -- 
 -- General settings
@@ -19,6 +20,7 @@ INSERT INTO Defines (Name, Value) VALUES ('CULTURE_ALLOW_TILE_FLIPPING',	1);	-- 
 INSERT INTO Defines (Name, Value) VALUES ('CULTURE_USE_POLICIES',			1); -- if true, policies will affect culture diffusion
 INSERT INTO Defines (Name, Value) VALUES ('CULTURE_MAX_LINES_UI',			5); -- Maximum culture entries shown on tooltip
 INSERT INTO Defines (Name, Value) VALUES ('CULTURE_SHOW_VARIATION',			1); -- Show variation % on tooltip
+
 --------------------------------------------------------------
 --
 -- Initial culture value in cities
@@ -33,19 +35,22 @@ INSERT INTO Defines (Name, Value) VALUES ('CULTURE_CITY_CAPED_FACTOR',		2000);	-
 INSERT INTO Defines (Name, Value) VALUES ('CULTURE_CITY_CONVERSION_RATE',	50);	-- per10000 rate of foreign culture groups converted in your cities each turn
 INSERT INTO Defines (Name, Value) VALUES ('CULTURE_LOST_CITY_CONQUEST',		55);	-- percentage of culture lost by each civs on a city plot on conquest
 INSERT INTO Defines (Name, Value) VALUES ('CULTURE_GAIN_CITY_CONQUEST',		75);	-- percentage of the total lost culture gained by the conqueror
+
 ------------------------------------------------------------------------------------------------------------------------
 --
 -- Minimum culture value before a plot can have ownership, ratio applied to change ownership and max distance from city
-INSERT INTO Defines (Name, Value) VALUES ('CULTURE_MINIMUM_FOR_ACQUISITION',	0);	-- higher value means more stability (less tile flipping) -- 300
+INSERT INTO Defines (Name, Value) VALUES ('CULTURE_MINIMUM_FOR_ACQUISITION',	300);	-- higher value means more stability (less tile flipping)
 INSERT INTO Defines (Name, Value) VALUES ('CULTURE_FLIPPING_RATIO',				65);	-- that percentage of the most important culture group value must be superior of the 2nd CG value for a tile to flip. 50 means the first CG must have more than twice the value of the second CG. 100 means the first CG get the tile immediatly.
-INSERT INTO Defines (Name, Value) VALUES ('CULTURE_FLIPPING_MAX_DISTANCE',		0);		-- max distance from a civ's city a plot may flip (0 means no limit) --6
+INSERT INTO Defines (Name, Value) VALUES ('CULTURE_FLIPPING_MAX_DISTANCE',		6);		-- max distance from a civ's city a plot may flip (0 means no limit)
 INSERT INTO Defines (Name, Value) VALUES ('CULTURE_FLIPPING_ONLY_ADJACENT',		1);		-- flip tile only if adjacent to an already owned tile
 INSERT INTO Defines (Name, Value) VALUES ('CULTURE_NO_FORTIFICATION_FLIPPING',	1);		-- fort won't flip from culture, and no flipping around citadelles
 INSERT INTO Defines (Name, Value) VALUES ('CULTURE_MINIMAL_ON_OWNED_PLOT',		1);		-- owned plot will have at least that culture value of the owner
+
 ------------------------------------------------------------------------------------------------------------------------
 --
 -- Minimum culture value before a plot start diffusing to normal adjacents plots
-INSERT INTO Defines (Name, Value) VALUES ('CULTURE_DIFFUSION_THRESHOLD',  0); -- higher value means slower diffusion -- 100
+INSERT INTO Defines (Name, Value) VALUES ('CULTURE_DIFFUSION_THRESHOLD',  100); -- higher value means slower diffusion
+
 ------------------------------------------------------------------------------------------------------------------------
 --
 -- Minimum culture value before a plot start diffusing to special adjacents plots
@@ -59,15 +64,18 @@ INSERT INTO Defines (Name, Value) VALUES ('CULTURE_CROSS_TUNDRA_THRESHOLD',		250
 INSERT INTO Defines (Name, Value) VALUES ('CULTURE_CROSS_RIVER_THRESHOLD',		200);
 INSERT INTO Defines (Name, Value) VALUES ('CULTURE_CROSS_HILLS_THRESHOLD',		150);
 INSERT INTO Defines (Name, Value) VALUES ('CULTURE_CROSS_FOREST_THRESHOLD',		125);
+
 ------------------------------------------------------------------------------------------------------------------------
 --
 -- Rate of diffusion
 INSERT INTO Defines (Name, Value) VALUES ('CULTURE_DIFFUSION_RATE',  25); --	percentage*10 : if CULTURE_DIFFUSION_RATE = 1000 then diffusion is 100% of diffusing plot value.
 --							Defaut is 55',  5,5% diffusion
+
 ------------------------------------------------------------------------------------------------------------------------
 --
 -- Rate of decay
 INSERT INTO Defines (Name, Value) VALUES ('CULTURE_DECAY_RATE',  5); -- percentage of culture lost on a plot each turn
+
 ------------------------------------------------------------------------------------------------------------------------
 --
 -- Maximum value of adjacent plot in percent of diffusing plot value
@@ -91,6 +99,7 @@ INSERT INTO Defines (Name, Value) VALUES ('CULTURE_CROSS_SNOW_MAX',		25);
 INSERT INTO Defines (Name, Value) VALUES ('CULTURE_CROSS_JUNGLE_MAX',	20);
 INSERT INTO Defines (Name, Value) VALUES ('CULTURE_CROSS_MARSH_MAX',	20);
 INSERT INTO Defines (Name, Value) VALUES ('CULTURE_CROSS_MOUNTAIN_MAX',	10);
+
 ------------------------------------------------------------------------------------------------------------------------
 --
 -- Rate of diffusion modifiers
@@ -145,14 +154,21 @@ INSERT INTO Defines (Name, Value) VALUES ('CULTURE_IMPROVEMENT_CONVERSION_RATE',
 INSERT INTO Defines (Name, Value) VALUES ('CULTURE_UNIT_CONVERSION_RATE',			50);	-- per10000 rate of conversion to unit owner each turn for units providing culture (multiplied by BaseCultureTurnsToCount)
 
 ------------------------------------------------------------------------------------------------------------------------
---
--- Revolution Mod
---
+-- 
+--  
 INSERT INTO Defines (Name, Value) VALUES ('CULTURE_SEPARATIST_TYPE',  'SEPARATIST'); -- culture type used for separatist
 
-INSERT OR REPLACE INTO Defines (Name, Value) VALUES ('THRESHOLD_JOYFUL', 200); -- Relation thresholds (max value, ex: 95 = Joyful, -60 = Unhappy)
-INSERT OR REPLACE INTO Defines (Name, Value) VALUES ('THRESHOLD_HAPPY', 75);
-INSERT OR REPLACE INTO Defines (Name, Value) VALUES ('THRESHOLD_CONTENT', 10);
-INSERT OR REPLACE INTO Defines (Name, Value) VALUES ('THRESHOLD_UNHAPPY', -10);
-INSERT OR REPLACE INTO Defines (Name, Value) VALUES ('THRESHOLD_WOEFUL', -125);
-INSERT OR REPLACE INTO Defines (Name, Value) VALUES ('THRESHOLD_EXASPERATED', -300);
+------------------------------------------------------------------------------------------------------------------------
+--
+-- Variations by Era
+INSERT INTO Defines (Name, Value) VALUES ('CULTURE_DIFFUSION_VARIATION_BY_ERA',  1); -- if true, Cultural Diffusion values may change by Eras
+--
+UPDATE Eras SET CultureMinimumForAcquisitionMod ='0'	, CultureDiffusionThresholdMod ='0'		, CultureFlippingMaxDistance ='0'	, CultureConquestEnabled ='1'	WHERE Type = 'ERA_FUTURE';
+UPDATE Eras SET CultureMinimumForAcquisitionMod ='15'	, CultureDiffusionThresholdMod ='15'	, CultureFlippingMaxDistance ='0'	, CultureConquestEnabled ='1'	WHERE Type = 'ERA_POSTMODERN';
+UPDATE Eras SET CultureMinimumForAcquisitionMod ='30'	, CultureDiffusionThresholdMod ='30'	, CultureFlippingMaxDistance ='0'	, CultureConquestEnabled ='1'	WHERE Type = 'ERA_MODERN';
+UPDATE Eras SET CultureMinimumForAcquisitionMod ='50'	, CultureDiffusionThresholdMod ='50'	, CultureFlippingMaxDistance ='0'	, CultureConquestEnabled ='1'	WHERE Type = 'ERA_INDUSTRIAL';
+UPDATE Eras SET CultureMinimumForAcquisitionMod ='70'	, CultureDiffusionThresholdMod ='70'	, CultureFlippingMaxDistance ='10'	, CultureConquestEnabled ='1'	WHERE Type = 'ERA_RENAISSANCE';
+UPDATE Eras SET CultureMinimumForAcquisitionMod ='85'	, CultureDiffusionThresholdMod ='85'	, CultureFlippingMaxDistance ='6'	, CultureConquestEnabled ='0'	WHERE Type = 'ERA_MEDIEVAL';
+UPDATE Eras SET CultureMinimumForAcquisitionMod ='95'	, CultureDiffusionThresholdMod ='95'	, CultureFlippingMaxDistance ='4'	, CultureConquestEnabled ='0'	WHERE Type = 'ERA_CLASSICAL';
+UPDATE Eras SET CultureMinimumForAcquisitionMod ='100'	, CultureDiffusionThresholdMod ='100'	, CultureFlippingMaxDistance ='3'	, CultureConquestEnabled ='0'	WHERE Type = 'ERA_ANCIENT';
+--

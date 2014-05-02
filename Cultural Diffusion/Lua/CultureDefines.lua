@@ -7,6 +7,12 @@ print("Loading Culture Defines...")
 print("-------------------------------------")
 
 -------------------------------------------------------------------------------------------------
+-- Shared 
+--
+MapModData.AH = MapModData.AH or {}
+MapModData.AH.CultureRelations = MapModData.AH.CultureRelations or {}
+
+-------------------------------------------------------------------------------------------------
 -- Debug settings
 --
 DEBUG_CULTURE			= (GameDefines.CULTURE_DEBUG > 0)				-- if true will output debug text in the lua.log / firetuner console.
@@ -19,6 +25,7 @@ DEBUG_PERFORMANCE		= (GameDefines.CULTURE_DEBUG_PERFORMANCE > 0)	-- if true will
 CULTURE_MAX_LINE_UI		= GameDefines.CULTURE_MAX_LINES_UI			-- Maximum culture entries shown on tooltip
 CULTURE_SHOW_VARIATION	= (GameDefines.CULTURE_SHOW_VARIATION > 0)	-- if true will show the culture variation for each civilization on tooltip
 BARBARIAN_PLAYER		= GameDefines.MAX_CIV_PLAYERS
+SEPARATIST_PLAYER		= GameDefines.SEPARATIST_PLAYER
 
 -------------------------------------------------------------------------------------------------
 -- Revolution Mod

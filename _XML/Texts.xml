@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Created by ModBuddy on 7/30/2013 12:26:24 AM -->
 <GameData>
+	<!-- Combat events -->
 	<Language_en_US>
 		<Replace Tag="TXT_KEY_NO_ACTION_AIR_STACKING_LIMIT">
 			<Text>[NEWLINE]This city can't hold more than {1_Num} aircraft.</Text>
@@ -26,9 +27,997 @@
 		<Replace Tag="TXT_KEY_MISC_YOU_GET_DEFENSIVE_SUPPORT">
 			<Text>Your {@1_UnitName} was able to provide [COLOR_POSITIVE_TEXT]Counter-Preparation Fire[ENDCOLOR] against an enemy {@2_EnUName} attack!</Text>
 		</Replace>
+	</Language_en_US>
 
+	<!-- Culture Diffusion -->
+	<Language_en_US>
 		<Replace Tag="TXT_KEY_MISC_LIBERATE_MINOR_PLOT_BONUS">
 			<Text>You gain [COLOR_POSITIVE_TEXT]{1_Num}[ENDCOLOR] [ICON_INFLUENCE] with {@2_MinorCivName} from liberating it's territory.</Text>
 		</Replace>
+
+		<Replace Tag="TXT_KEY_NOTIFICATION_ACQUIRE_NEW_PLOT">
+			<Text>You have acquired new territory with support of local culture group near {1_CityName}</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_NOTIFICATION_SUMMARY_ACQUIRE_NEW_PLOT">
+			<Text>New territory acquired !</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_NOTIFICATION_ACQUIRE_PLOT">
+			<Text>You have acquired a part of {1_PlayerName} territory with support of local culture group near {2_CityName}</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_NOTIFICATION_SUMMARY_ACQUIRE_PLOT">
+			<Text>Territory acquired !</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_NOTIFICATION_LOST_PLOT">
+			<Text>{1_PlayerName} has acquired a part of your territory with support of local culture group near {2_CityName}</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_NOTIFICATION_SUMMARY_LOST_PLOT">
+			<Text>Territory lost !</Text>
+		</Replace>
 	</Language_en_US>
+
+	<!-- Revolutions -->
+	<Language_en_US>
+
+		<!-- +++++++++++++++++++++++++++++++++ -->
+
+		<!-- Info screen -->
+		<Row Tag="TXT_KEY_REVOLUTION_INFOS_TITLE">
+			<Text>Empire Stability</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_SUMMARY">
+			<Text>Summary</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_FACTION_EMPIRE">
+			<Text>Inner Relations</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_INTER_FACTION">
+			<Text>Inter-Factions</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SORT_CITY_STABILITY">
+			<Text>Sort by stability</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SORT_CITY_HAPPY">
+			<Text>Sort by happy citizen</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SORT_CITY_NEUTRAL">
+			<Text>Sort by neutral citizen</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SORT_CITY_UNHAPPY">
+			<Text>Sort by unhappy citizen</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SORT_CITY_REVOLT">
+			<Text>Sort by chance of strike</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SORT_CITY_REBELLION">
+			<Text>Sort by chance of rebellion</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SORT_CITY_REVOLUTION">
+			<Text>Sort by chance of revolution</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_INNER_EMPIRE_DETAILS">
+			<Text>[ICON_PLUS] Global Stability</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_INNER_EMPIRE_DETAILS_COLLAPSE">
+			<Text>[ICON_MINUS] Global Stability</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_RELATIONS_TITLE">
+			<Text>[ICON_CULTURE] Representation &amp; Relations</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_INFO_ACTUAL_STATUS">
+			<Text>Actual statut : {1_Status}</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_CULTURE_GROUP_RELATION">
+			<Text>{1_Percent}% of Empire [ICON_CITIZEN][NEWLINE]Mood : {2_Relation}</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_CULTURE_GROUP_RELATION_VARIATION">
+			<Text>Culture relation variation is  [{1_Color}]{2_Variation}[ENDCOLOR] /turn.</Text>
+		</Row>
+		<!-- end Info Screen -->
+
+		<!--  -->
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_GLOBAL_HAPPINESS">
+			<Text> from global happiness.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_SEPARATIST_BASE">
+			<Text>from separatists base relation.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_OWN_BASE">
+			<Text>from own citizen base relation.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_FOREIGN_BASE">
+			<Text>from foreign citizen base relation.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_HAPPINESS_DIFFERENCE">
+			<Text>from happiness difference.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_WAR">
+			<Text>from being at War.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_DOF">
+			<Text>from having good international relation.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_DENOUNCED">
+			<Text>from having bad international relation.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_DEAD_CIV">
+			<Text>from global happiness. (defeated civilization)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_LIBERTY">
+			<Text>from Liberty Policy.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_LIBERTY_FINISHER">
+			<Text>from completed Liberty Policy.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_CITIZENSHIP">
+			<Text>from Citizenship Policy.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_REPRESENTATION">
+			<Text>from Representation Policy.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_ARMED_REBELLION_START">
+			<Text>{1_Player1} started rebellion against {2_Player2}.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_ARMED_REBELLION_START_SHORT">
+			<Text>Rebellion started.</Text>
+		</Row>
+		<!-- start tendencies -->
+		<Row Tag="TXT_KEY_REVOLUTION_TENDENCY_STABILITY">
+			<Text>Tendency : [COLOR_POSITIVE_TEXT]stability raising[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_TENDENCY_UNREST">
+			<Text>Tendency : [COLOR_NEGATIVE_TEXT]unrest raising[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_TENDENCY_NO">
+			<Text>Tendency : no variation</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_WEIGHTED_VARIATION">
+			<Text>Weighted relation variation is : [{1_Color}]{2_Value}[ENDCOLOR]</Text>
+		</Row>k
+		<!-- end tendencies -->
+		<!-- start main tooltip -->
+		<Row Tag="TXT_KEY_REVOLUTION_EMPIRE_POPULATION">
+			<Text>Total [ICON_CITIZEN] population in the empire is</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_EMPIRE_STATE">
+			<Text>Your empire is in {1_State} condition.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_HINT_LOWER_DISORDER">
+			<Text>Try to globally raise happiness, or send military units near the following cities to lower disorder</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_HINT_NO_SMALL_CITY_REVOLT">
+			<Text>but city is to small to revolt</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_HINT_NO_SMALL_CITY_REBELLION">
+			<Text>but city is to small to rebel</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_HINT_NO_SMALL_CITY_REVOLUTION">
+			<Text>but city is to small for a revolution</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_STRIKE_PROBABILITY">
+			<Text>[ICON_BULLET]{1_Percent}% strike probability</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_REBELLION_PROBABILITY">
+			<Text>[ICON_BULLET]{1_Percent}% rebellion probability</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_REVOLUTION_PROBABILITY">
+			<Text>[ICON_BULLET]{1_Percent}% revolution probability</Text>
+		</Row>
+		<!-- end main tooltip -->
+		<!-- start relation status -->
+		<Row Tag="TXT_KEY_REVOLUTION_RELATION_STATUS_EXASPERATED">
+			<Text>exasperated</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_RELATION_STATUS_WOEFUL">
+			<Text>woeful</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_RELATION_STATUS_UNHAPPY">
+			<Text>unhappy</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_RELATION_STATUS_CONTENT">
+			<Text>content</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_RELATION_STATUS_HAPPY">
+			<Text>happy</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_RELATION_STATUS_JOYFUL">
+			<Text>joyful</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_RELATION_STATUS_ENTHUSIASTIC">
+			<Text>enthusiastic</Text>
+		</Row>
+		<!-- end relation status -->
+		<!-- start culture&rebel type -->
+		<Row Tag="TXT_KEY_REVOLUTION_CULTURE_TYPE_SEPARATIST_ADJ">
+			<Text>Separatist</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_REBELS_TYPE_SEPARATIST">
+			<Text>{1_CultureType} separatists</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_REBELS_TYPE_REBEL">
+			<Text>{1_CultureType} rebels</Text>
+		</Row>
+		<!-- end culture&rebel type -->
+		<!-- trouble value start -->
+		<Row Tag="TXT_KEY_REVOLUTION_TROUBLE_VALUE_STABLE">
+			<Text>stable</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_TROUBLE_VALUE_PROTESTER">
+			<Text>protester</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_TROUBLE_VALUE_UNSTABLE">
+			<Text>unstable</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_TROUBLE_VALUE_REBELLIOUS">
+			<Text>rebellious</Text>
+		</Row>
+		<!-- trouble value end-->
+		<!-- start city state screen -->
+		<Row Tag="TXT_KEY_REVOLUTION_WAR_MINIMUM_STARTING_TURN">
+			<Text>You can't declare war before turn</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NO_ALTERNATE_HISTORY">
+			<Text>This scenario doesn't allow alternate history</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_FORCED_PEACE_TOOLTIP">
+			<Text>There is a peace treaty enforced on you and this nation's protector</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_FORCED_PEACE_MESSAGE">
+			<Text>We hope that the peace treaty between you and our protector will last.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NO_PEACE_WITH_REBELS">
+			<Text>You can't make peace with rebels.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_MOTTO">
+			<Text>[ICON_RESISTANCE] Viva la Revolucion ! [ICON_RESISTANCE]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_AGAINST_YOU">
+			<Text>[COLOR_NEGATIVE_TEXT]Rebelling against your rule ![ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_AGAINST_ANOTHER">
+			<Text>Rebelling against</Text>
+		</Row>
+		<!-- end city-state screen -->
+		<!-- start notifications -->
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_PROTEST">
+			<Text>{1_CultureType} citizens in {2_CityName} are protesting against your rule !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_PROTEST_SHORT">
+			<Text>Strikes in {1_CityName} !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_REVOLT">
+			<Text>{1_CultureType} citizens in {2_CityName} are revolting against your rule !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_REVOLT_SHORT">
+			<Text>Revolt in {1_CityName} !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_REVOLUTION_ATTEMPT">
+			<Text>{1_CultureType} citizens in {2_CityName} are trying to start a revolution !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_REVOLUTION_ATTEMPT_SHORT">
+			<Text>Revolution in {1_CityName} !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_REVOLUTION">
+			<Text>{1_CultureType} citizens in {2_CityName} are starting a revolution !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_REVOLUTION_SHORT">
+			<Text>Revolution in {1_CityName} !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_GARRISON_LOST">
+			<Text>{1_Unit} has been killed while stopping {2_CultureType} insurrection in {3_CityName} !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_GARRISON_LOST_SHORT">
+			<Text>Unit killed in {1_CityName} !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_CITY_FLIPPED_TO_PLAYER">
+			<Text>{1_CultureType} citizens in {2_CityName} have decided to join your empire !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_CITY_FLIPPED_TO_PLAYER_SHORT">
+			<Text>Revolution ended in {1_CityName} !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_CITY_FLIPPED_FROM_PLAYER">
+			<Text>{1_CultureType} citizens in {2_CityName} have decided to join {3_Player} !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_CITY_FLIPPED_FROM_PLAYER_SHORT">
+			<Text>Revolution ended in {1_CityName} !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_CITY_INDEPENDENCE">
+			<Text>{1_CultureType} citizens in {2_CityName} have declared independence and found the state of {3_Player} !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_CITY_INDEPENDENCE_SHORT">
+			<Text>Revolution ended in {1_CityName} !</Text>
+		</Row>
+		<!-- end notifications -->
+		<!-- start unrest tooltip -->
+		<Row Tag="TXT_KEY_REVOLUTION_UNREST_CITY_MAX">
+			<Text>City maximum unrest value = [{1_Color}]{2_points}[ENDCOLOR] points.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_UNREST_FROM_INITIAL">
+			<Text>[{1_Color}] {2_points}[ENDCOLOR] from initial unrest value.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_UNREST_FROM_MARTIAL_LAW">
+			<Text>[{1_Color}] {2_points}[ENDCOLOR] from martial law by {3_count} unit(s).</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_UNREST_FROM_AFFINITY">
+			<Text>[{1_Color}] {2_points}[ENDCOLOR] from city affinity with your empire.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_UNREST_FROM_AUTONOMY">
+			<Text>[{1_Color}] {2_ratio}% ratio[ENDCOLOR] from autonomy statut. (puppet city).</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_UNREST_FROM_OCCUPATION">
+			<Text>[{1_Color}] {2_ratio}% ratio[ENDCOLOR] from being occupied.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_UNREST_RISK_REVOLT">
+			<Text>{1_percent}% risk of [COLOR_NEGATIVE_TEXT]entering resistance[ENDCOLOR], {2_points} points are needed.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_UNREST_RISK_REBEL">
+			<Text>{1_percent}% risk of [COLOR_NEGATIVE_TEXT]generating rebels[ENDCOLOR], {2_points} points are needed.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_UNREST_RISK_REVOLUTION">
+			<Text>{1_percent}% risk of [COLOR_NEGATIVE_TEXT]starting revolution[ENDCOLOR], {2_points} points are needed.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_UNREST_REPRESENTATION">
+			<Text>No unhappy Culture Group has enough representation (minimum {1_Ratio}%) to produce unrest.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_UNREST_RELATION">
+			<Text>All Culture Groups relation value are high enough (more than {1_Points}) to maintain stability.</Text>
+		</Row>
+		<!-- end unrest tooltip -->
+		<!-- start unrest city tooltip -->
+		<Row Tag="TXT_KEY_REVOLUTION_RESISTANCE_TURNS_MAX">
+			<Text>Maximum resistance turns = {1_Turns}</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_REBEL_UNITS_MAX">
+			<Text>Maximum rebel units to spawn = {1_Units}</Text>
+		</Row>
+		<!-- end unrest city tooltip -->
+
+	</Language_en_US>
+	<Language_FR_FR>
+
+		<!-- +++++++++++++++++++++++++++++++++ -->
+
+		<!-- Info screen -->
+		<Row Tag="TXT_KEY_REVOLUTION_INFOS_TITLE">
+			<Text>Stabilité de l'empire</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_SUMMARY">
+			<Text>Sommaire</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_FACTION_EMPIRE">
+			<Text>Relations internes</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_INTER_FACTION">
+			<Text>Relation entre faction</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SORT_CITY_STABILITY">
+			<Text>Trier par stabilité</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SORT_CITY_HAPPY">
+			<Text>Trier par bonheur</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SORT_CITY_NEUTRAL">
+			<Text>Trier par citoyen neutre</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SORT_CITY_UNHAPPY">
+			<Text>Trier par citoyen malheureux</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SORT_CITY_REVOLT">
+			<Text>Trier par chance de grève</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SORT_CITY_REBELLION">
+			<Text>Trier par chance de revolte</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SORT_CITY_REVOLUTION">
+			<Text>Trier par chance de revolution</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_INNER_EMPIRE_DETAILS">
+			<Text>[ICON_PLUS] Stabilité globale</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_INNER_EMPIRE_DETAILS_COLLAPSE">
+			<Text>[ICON_MINUS] Stabilité globale</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_RELATIONS_TITLE">
+			<Text>[ICON_CULTURE] Representation &amp; Relations</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_INFO_ACTUAL_STATUS">
+			<Text>Statut actuel : {1_Status}</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_CULTURE_GROUP_RELATION">
+			<Text>{1_Percent}% de l'Empire [ICON_CITIZEN][NEWLINE]Mood : {2_Relation}</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_CULTURE_GROUP_RELATION_VARIATION">
+			<Text> Relation entre les differents groupes culturels [{1_Color}]{2_Variation}[ENDCOLOR] /turn.</Text>
+		</Row>
+		<!-- end Info Screen -->
+
+		<!--  -->
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_GLOBAL_HAPPINESS">
+			<Text> Par bonheur global.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_SEPARATIST_BASE">
+			<Text>Pour avoir des relations avec les insurgés.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_OWN_BASE">
+			<Text>Pour avoir des relations avec les citoyens.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_FOREIGN_BASE">
+			<Text>Pour avoir des relations avec les etrangers.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_HAPPINESS_DIFFERENCE">
+			<Text>Par difference de bonheur.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_WAR">
+			<Text>Par le fait d'etre en guerre.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_DOF">
+			<Text>Pour avoir de bonnes relations internationales.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_DENOUNCED">
+			<Text>Pour avoir de mauvaises relations internationales</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_DEAD_CIV">
+			<Text>Par bonheur globale. (civilisation vaincue)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_LIBERTY">
+			<Text>Pour avoir adopté la doctrine Liberté.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_LIBERTY_FINISHER">
+			<Text>Pour avoir completé la doctrine Liberté.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_CITIZENSHIP">
+			<Text>Pour avoir la doctrine citoyenneté.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_REPRESENTATION">
+			<Text>Pour avoir la doctrine Représentation.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_ARMED_REBELLION_START">
+			<Text>{1_Player1} c'est revolté contre {2_Player2}.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_ARMED_REBELLION_START_SHORT">
+			<Text>Une revolte a commencé.</Text>
+		</Row>
+		<!-- start tendencies -->
+		<Row Tag="TXT_KEY_REVOLUTION_TENDENCY_STABILITY">
+			<Text>Tendence : [COLOR_POSITIVE_TEXT]retour a la stabilité[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_TENDENCY_UNREST">
+			<Text>Tendence : [COLOR_NEGATIVE_TEXT]La situation se deteriore[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_TENDENCY_NO">
+			<Text>Tendence : Aucun changement</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_WEIGHTED_VARIATION">
+			<Text>Les variations de relation sont de : [{1_Color}]{2_Value}[ENDCOLOR]</Text>
+		</Row>k
+		<!-- end tendencies -->
+		<!-- start main tooltip -->
+		<Row Tag="TXT_KEY_REVOLUTION_EMPIRE_POPULATION">
+			<Text>La population [ICON_CITIZEN] totale de l'empire est de</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_EMPIRE_STATE">
+			<Text>Votre empire est {1_State} .</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_HINT_LOWER_DISORDER">
+			<Text>Essayez de faire augmenter le bonheur globale ou envoyer unité militaire près de la zone concerné pour y maintenir l'ordre</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_HINT_NO_SMALL_CITY_REVOLT">
+			<Text>mais la ville est trop petite pour rentrer en grève</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_HINT_NO_SMALL_CITY_REBELLION">
+			<Text>mais la ville est trop petite pour se revolter</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_HINT_NO_SMALL_CITY_REVOLUTION">
+			<Text>mais la ville est trop petite pour commencer une revolution</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_STRIKE_PROBABILITY">
+			<Text>[ICON_BULLET]{1_Percent}% probabilité de grève</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_REBELLION_PROBABILITY">
+			<Text>[ICON_BULLET]{1_Percent}% probabilité de revolte</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_REVOLUTION_PROBABILITY">
+			<Text>[ICON_BULLET]{1_Percent}% probabilité de revolution</Text>
+		</Row>
+		<!-- end main tooltip -->
+		<!-- start relation status -->
+		<Row Tag="TXT_KEY_REVOLUTION_RELATION_STATUS_EXASPERATED">
+			<Text>exaspéré</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_RELATION_STATUS_WOEFUL">
+			<Text>agacé</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_RELATION_STATUS_UNHAPPY">
+			<Text>malheureux</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_RELATION_STATUS_CONTENT">
+			<Text>content</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_RELATION_STATUS_HAPPY">
+			<Text>heureux</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_RELATION_STATUS_JOYFUL">
+			<Text>joyeux</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_RELATION_STATUS_ENTHUSIASTIC">
+			<Text>enthousiaste</Text>
+		</Row>
+		<!-- end relation status -->
+		<!-- start culture&rebel type -->
+		<Row Tag="TXT_KEY_REVOLUTION_CULTURE_TYPE_SEPARATIST_ADJ">
+			<Text>Insurgé</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_REBELS_TYPE_SEPARATIST">
+			<Text>{1_CultureType} insurgés</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_REBELS_TYPE_REBEL">
+			<Text>{1_CultureType} rebelles</Text>
+		</Row>
+		<!-- end culture&rebel type -->
+		<!-- trouble value start -->
+		<Row Tag="TXT_KEY_REVOLUTION_TROUBLE_VALUE_STABLE">
+			<Text>stable</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_TROUBLE_VALUE_PROTESTER">
+			<Text>manifestant</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_TROUBLE_VALUE_UNSTABLE">
+			<Text>instable</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_TROUBLE_VALUE_REBELLIOUS">
+			<Text>revolté</Text>
+		</Row>
+		<!-- trouble value end-->
+		<!-- start city state screen -->
+		<Row Tag="TXT_KEY_REVOLUTION_WAR_MINIMUM_STARTING_TURN">
+			<Text>Vous ne pouvez pas déclaré de guerre avant la fin du tour</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NO_ALTERNATE_HISTORY">
+			<Text>Ce scenario n'autorise pas d'histoire alternative</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_FORCED_PEACE_TOOLTIP">
+			<Text>Il y a un traité de paix entre vous et l'empire protegeant cette nation</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_FORCED_PEACE_MESSAGE">
+			<Text>Nous esperons que le traité de paix entre vous et notre protecteur durera longtemps.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NO_PEACE_WITH_REBELS">
+			<Text>Vous ne pouvez pas faire la paix avec les rebelles.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_MOTTO">
+			<Text>[ICON_RESISTANCE] Viva la Revolucion ! [ICON_RESISTANCE]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_AGAINST_YOU">
+			<Text>[COLOR_NEGATIVE_TEXT]Se rebelle contre votre autorité ![ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_AGAINST_ANOTHER">
+			<Text>Se rebelle contre</Text>
+		</Row>
+		<!-- end city-state screen -->
+		<!-- start notifications -->
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_PROTEST">
+			<Text>{1_CultureType} Les citoyens dans {2_CityName} protestent contre vos lois!</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_PROTEST_SHORT">
+			<Text>Grève dans {1_CityName} !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_REVOLT">
+			<Text>{1_CultureType} Les citoyens dans {2_CityName} se revoltent contre votre autorité !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_REVOLT_SHORT">
+			<Text>Revolte dans {1_CityName} !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_REVOLUTION_ATTEMPT">
+			<Text>{1_CultureType} Les citoyens dans {2_CityName} essaye de lancé une revolution !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_REVOLUTION_ATTEMPT_SHORT">
+			<Text>Revolution dans {1_CityName} !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_REVOLUTION">
+			<Text>{1_CultureType} les citoyens dans {2_CityName} ont commencé une revolution !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_REVOLUTION_SHORT">
+			<Text>Revolution dans {1_CityName} !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_GARRISON_LOST">
+			<Text>{1_Unit} a été tué en essayant d'empecher une{2_CultureType} insurrection dans {3_CityName} !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_GARRISON_LOST_SHORT">
+			<Text>Une unité a été tué dans {1_CityName} !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_CITY_FLIPPED_TO_PLAYER">
+			<Text>{1_CultureType} Les citoyens de {2_CityName} ont décidé de rejoindre votre empire !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_CITY_FLIPPED_TO_PLAYER_SHORT">
+			<Text>La révolution c'est arreté dans {1_CityName} !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_CITY_FLIPPED_FROM_PLAYER">
+			<Text>{1_CultureType} Les citoyens de {2_CityName} ont décidé de rejoindre {3_Player} !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_CITY_FLIPPED_FROM_PLAYER_SHORT">
+			<Text>La revolution c'estterminé dans{1_CityName} !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_CITY_INDEPENDENCE">
+			<Text>{1_CultureType} Les citoyens de {2_CityName} ont proclamé leur independance et ont fondé l'état de {3_Player} !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_CITY_INDEPENDENCE_SHORT">
+			<Text>La revolution c'est terminé dans {1_CityName} !</Text>
+		</Row>
+		<!-- end notifications -->
+		<!-- start unrest tooltip -->
+		<Row Tag="TXT_KEY_REVOLUTION_UNREST_CITY_MAX">
+			<Text>City maximum unrest value = [{1_Color}]{2_points}[ENDCOLOR] points.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_UNREST_FROM_INITIAL">
+			<Text>[{1_Color}] {2_points} from initial unrest value.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_UNREST_FROM_MARTIAL_LAW">
+			<Text>[{1_Color}] {2_points} from martial law by {3_count} unit(s).</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_UNREST_FROM_AFFINITY">
+			<Text>[{1_Color}] {2_points} par affinité avec votre empire.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_UNREST_FROM_AUTONOMY">
+			<Text>[{1_Color}] {2_ratio}% ratio[ENDCOLOR] par statut d'autonomie. (ville fantoche).</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_UNREST_FROM_OCCUPATION">
+			<Text>[{1_Color}] {2_ratio}% ratio[ENDCOLOR] pour être occupé.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_UNREST_RISK_REVOLT">
+			<Text>{1_percent}% risque  [COLOR_NEGATIVE_TEXT]d'entrée en resistance[ENDCOLOR], {2_points} sont necessaires.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_UNREST_RISK_REBEL">
+			<Text>{1_percent}% risque  [COLOR_NEGATIVE_TEXT]de faire apparaitre des rebelles[ENDCOLOR], {2_points} points sont necessaires.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_UNREST_RISK_REVOLUTION">
+			<Text>{1_percent}% risque [COLOR_NEGATIVE_TEXT]de commencé une revolution[ENDCOLOR], {2_points} points sont necessaires.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_UNREST_REPRESENTATION">
+			<Text>Aucun groupe culturel n'a assez d'influence , (minimum {1_Ratio}%) pour pouvoir provoqué un mouvement de contestation.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_UNREST_RELATION">
+			<Text>Aucun groupe culturel n'a assez d'influence, (plus que {1_Points}) pour pouvoir maintenir l'ordre.</Text>
+		</Row>
+		<!-- end unrest tooltip -->
+		<!-- start unrest city tooltip -->
+		<Row Tag="TXT_KEY_REVOLUTION_RESISTANCE_TURNS_MAX">
+			<Text>Tours de resistance maximum = {1_Turns}</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_REBEL_UNITS_MAX">
+			<Text>Nombre d'unité rebelle maximum = {1_Units}</Text>
+		</Row>
+		<!-- end unrest city tooltip -->
+
+	</Language_FR_FR>
+	<Language_RU_RU>
+		<!-- +++++++++++++++++++++++++++++++++ -->
+
+		<!-- Info screen -->
+		<Row Tag="TXT_KEY_REVOLUTION_INFOS_TITLE">
+			<Text>
+				Стабильность империи<!--Empire Stability-->
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_SUMMARY">
+			<Text>
+				Сводка<!-- Summary -->
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_FACTION_EMPIRE">
+			<Text>
+				Внутренние отношения<!-- Inner Relations -->
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_INTER_FACTION">
+			<Text>
+				Межнациональные отношения<!-- Inter-Factions -->
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SORT_CITY_STABILITY">
+			<Text>Упорядочить по стабильности</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SORT_CITY_HAPPY">
+			<Text>Упорядочить по количеству счастливых жителей</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SORT_CITY_NEUTRAL">
+			<Text>Упорядочить по количеству нейтральных жителей</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SORT_CITY_UNHAPPY">
+			<Text>Упорядочить по количеству несчастных жителей</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SORT_CITY_REVOLT">
+			<Text>Упорядочить по вероятности забастовок</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SORT_CITY_REBELLION">
+			<Text>Упорядочить по вероятности восстаний</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SORT_CITY_REVOLUTION">
+			<Text>Упорядочить по вероятности революций</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_INNER_EMPIRE_DETAILS">
+			<Text>[ICON_PLUS] Стабильность</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_INNER_EMPIRE_DETAILS_COLLAPSE">
+			<Text>[ICON_MINUS] Стабильность</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_RELATIONS_TITLE">
+			<Text>[ICON_CULTURE] Представительство и Отношения</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_INFO_ACTUAL_STATUS">
+			<Text>Статус : {1_Status}</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_CULTURE_GROUP_RELATION">
+			<Text>{1_Percent}% жителей [ICON_CITIZEN][NEWLINE]Настроение : {2_Relation}</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_CULTURE_GROUP_RELATION_VARIATION">
+			<Text>Вариация [{1_Color}]{2_Variation}[ENDCOLOR] за ход.</Text>
+		</Row>
+		<!-- end Info Screen -->
+
+		<!--  -->
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_GLOBAL_HAPPINESS">
+			<Text>от уровня счастья в стране</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_SEPARATIST_BASE">
+			<Text>от сепаратиских настроений</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_OWN_BASE">
+			<Text>от настроений своих граждан</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_FOREIGN_BASE">
+			<Text>от настроений иностранцев</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_HAPPINESS_DIFFERENCE">
+			<Text>от разницы в уровне счастья стран</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_WAR">
+			<Text>из-за военных действий</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_DOF">
+			<Text>от хороших международных отношений</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_DENOUNCED">
+			<Text>от плохих международных отношений</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_DEAD_CIV">
+			<Text>от уровня счастья в стране (исчезнувшая цивилизация)</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_LIBERTY">
+			<Text>от общественного института Свобода</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_LIBERTY_FINISHER">
+			<Text>от завершенного общественного института Свобода</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_CITIZENSHIP">
+			<Text>от общественного института Гражданство</Text>
+		</Row>
+		<Row Tag="TXT_KEY_RELATION_CHANGE_FROM_REPRESENTATION">
+			<Text>от общественного института Представительство</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_ARMED_REBELLION_START">
+			<Text>{1_Player1} подняли восстание против {2_Player2}.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_ARMED_REBELLION_START_SHORT">
+			<Text>Началось восстание.</Text>
+		</Row>
+		<!-- start tendencies -->
+		<Row Tag="TXT_KEY_REVOLUTION_TENDENCY_STABILITY">
+			<Text>Тенденция: [COLOR_POSITIVE_TEXT]стабилизация[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_TENDENCY_UNREST">
+			<Text>Тенденция: [COLOR_NEGATIVE_TEXT]протест нарастает[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_TENDENCY_NO">
+			<Text>Тенденция: без изменений</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_WEIGHTED_VARIATION">
+			<Text>Взвешенная вариация отношений : [{1_Color}]{2_Value}[ENDCOLOR]</Text>
+		</Row>
+		<!-- end tendencies -->
+		<!-- start main tooltip -->
+		<Row Tag="TXT_KEY_REVOLUTION_EMPIRE_POPULATION">
+			<Text>Общая [ICON_CITIZEN] численность населения в вашем государстве</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_EMPIRE_STATE">
+			<Text>Общее состояние вашего государства : {1_State}.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_HINT_LOWER_DISORDER">
+			<Text>Попробуйте повысить уровень счастья ваших жителей, или разместите войска около указанных городов, чтобы предотвратить беспорядки</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_HINT_NO_SMALL_CITY_REVOLT">
+			<Text>однако население города слишком малочислено и не будет бастовать</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_HINT_NO_SMALL_CITY_REBELLION">
+			<Text>однако население города слишком малочислено и не совершит восстаний</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_HINT_NO_SMALL_CITY_REVOLUTION">
+			<Text>однако население города слишком малочислено и не совершит революцию</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_STRIKE_PROBABILITY">
+			<Text>[ICON_BULLET]{1_Percent}% вероятность забастовок</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_REBELLION_PROBABILITY">
+			<Text>[ICON_BULLET]{1_Percent}% вероятность вооруженных восстаний</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_REVOLUTION_PROBABILITY">
+			<Text>[ICON_BULLET]{1_Percent}% вероятность революции</Text>
+		</Row>
+		<!-- end main tooltip -->
+		<!-- start relation status -->
+		<Row Tag="TXT_KEY_REVOLUTION_RELATION_STATUS_EXASPERATED">
+			<Text>доведены до крайности</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_RELATION_STATUS_WOEFUL">
+			<Text>очень несчастны</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_RELATION_STATUS_UNHAPPY">
+			<Text>несчастны</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_RELATION_STATUS_CONTENT">
+			<Text>удовлетворены</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_RELATION_STATUS_HAPPY">
+			<Text>счастливы</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_RELATION_STATUS_JOYFUL">
+			<Text>радостны</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_RELATION_STATUS_ENTHUSIASTIC">
+			<Text>восторжены</Text>
+		</Row>
+		<!-- end relation status -->
+		<!-- start culture&rebel type -->
+		<Row Tag="TXT_KEY_REVOLUTION_CULTURE_TYPE_SEPARATIST_ADJ">
+			<Text>Сепарат.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_REBELS_TYPE_SEPARATIST">
+			<Text>{1_CultureTye} сепаратисты</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_REBELS_TYPE_REBEL">
+			<Text>{1_CultureTye} повстанцы</Text>
+		</Row>
+		<!-- end culture&rebel type -->
+		<!-- trouble value start -->
+		<Row Tag="TXT_KEY_REVOLUTION_TROUBLE_VALUE_STABLE">
+			<Text>стабильность</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_TROUBLE_VALUE_PROTESTER">
+			<Text>протесты</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_TROUBLE_VALUE_UNSTABLE">
+			<Text>нестабильность</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_TROUBLE_VALUE_REBELLIOUS">
+			<Text>восстания</Text>
+		</Row>
+		<!-- trouble value end-->
+		<!-- start city state screen -->
+		<Row Tag="TXT_KEY_REVOLUTION_WAR_MINIMUM_STARTING_TURN">
+			<Text>Вы не можете объявить войну раньше хода </Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NO_ALTERNATE_HISTORY">
+			<Text>Данный сценарий не позволяет изменять историю</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_FORCED_PEACE_TOOLTIP">
+			<Text>Между вами и защитником города-государства заключено мирное соглашение</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_FORCED_PEACE_MESSAGE">
+			<Text>Мы надеемся, что условия мирного соглашения будут выполнены в полной мере.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NO_PEACE_WITH_REBELS">
+			<Text>Вы не можете заключить мир с повстанцами.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_MOTTO">
+			<Text>[ICON_RESISTANCE] Viva la Revolucion ! [ICON_RESISTANCE]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_AGAINST_YOU">
+			<Text>[COLOR_NEGATIVE_TEXT]Восстание против вашего правления![ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_AGAINST_ANOTHER">
+			<Text>Восстание против</Text>
+		</Row>
+		<!-- end city-state screen -->
+		<!-- start notifications -->
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_PROTEST">
+			<Text>{1_CultureType} жители города {2_CityName} проетстуют против вашего правления !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_PROTEST_SHORT">
+			<Text>Забастовка в городе {1_CityName} !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_REVOLT">
+			<Text>{1_CultureType} жители города {2_CityName} подняли восстание против вас !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_REVOLT_SHORT">
+			<Text>Восстание в городе {1_CityName} !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_REVOLUTION_ATTEMPT">
+			<Text>{1_CultureType} жители города {2_CityName} затевают переворот !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_REVOLUTION_ATTEMPT_SHORT">
+			<Text>Революция в городе {1_CityName} !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_REVOLUTION">
+			<Text>{1_CultureType} жители города {2_CityName} совершили переворот !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_REVOLUTION_SHORT">
+			<Text>Революция в городе {1_CityName} !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_GARRISON_LOST">
+			<Text>{1_Unit} уничтожен {2_CultureType} бунтовщиками в городе {3_CityName} !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_GARRISON_LOST_SHORT">
+			<Text>Юнит уничтожен {1_CityName} !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_CITY_FLIPPED_TO_PLAYER">
+			<Text>{1_CultureType} жители города {2_CityName} решили присоедениться к вашему государству !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_CITY_FLIPPED_TO_PLAYER_SHORT">
+			<Text>Итог революции в городе {1_CityName} !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_CITY_FLIPPED_FROM_PLAYER">
+			<Text>{1_CultureType} жители города {2_CityName} решили присоединиться к {3_Player} !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_CITY_FLIPPED_FROM_PLAYER_SHORT">
+			<Text>Итог революции в городе {1_CityName} !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_CITY_INDEPENDENCE">
+			<Text>{1_CultureType} жители города {2_CityName} объявили независимость и основали государство {3_Player} !</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_NOTIFICATION_CITY_INDEPENDENCE_SHORT">
+			<Text>Итог революции в городе {1_CityName} !</Text>
+		</Row>
+		<!-- end notifications -->
+		<!-- start unrest tooltip -->
+		<Row Tag="TXT_KEY_REVOLUTION_UNREST_CITY_MAX">
+			<Text>Максимальный уровень беспорядков в городе = [{1_Color}]{2_points}[ENDCOLOR] очков.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_UNREST_FROM_INITIAL">
+			<Text>[{1_Color}] {2_points} от базового уровня недовольства.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_UNREST_FROM_MARTIAL_LAW">
+			<Text>[{1_Color}] {2_points} от военного присутствия {3_count} юнитов(юнита).</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_UNREST_FROM_AFFINITY">
+			<Text>[{1_Color}] {2_points} от родства с вашей страной.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_UNREST_FROM_AUTONOMY">
+			<Text>[{1_Color}] {2_ratio}% поправка[ENDCOLOR] от автономии в составе государства.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_UNREST_FROM_OCCUPATION">
+			<Text>[{1_Color}] {2_ratio}% поправка[ENDCOLOR] от оккупационного режима в городе.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_UNREST_RISK_REVOLT">
+			<Text>{1_percent}% риск [COLOR_NEGATIVE_TEXT]начала забастовок[ENDCOLOR], {2_points} очков необходимо.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_UNREST_RISK_REBEL">
+			<Text>{1_percent}% риск [COLOR_NEGATIVE_TEXT]вооруженного восстания[ENDCOLOR], {2_points} очков необходимо.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_UNREST_RISK_REVOLUTION">
+			<Text>{1_percent}% риск [COLOR_NEGATIVE_TEXT]революции[ENDCOLOR], {2_points} очков необходимо.</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_UNREST_REPRESENTATION">
+			<Text>Ни одна из несчастливых культуных групп не представлена в количестве, достаточном для беспорядков (мин. {1_Ratio}%).</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_UNREST_RELATION">
+			<Text>Представители всех культурных групп достаточно счастливы (более {1_Points}) для поддержания спокойствия.</Text>
+		</Row>
+		<!-- end unrest tooltip -->
+		<!-- start unrest city tooltip -->
+		<Row Tag="TXT_KEY_REVOLUTION_RESISTANCE_TURNS_MAX">
+			<Text>Максимально ходов сопротивления = {1_Turns}</Text>
+		</Row>
+		<Row Tag="TXT_KEY_REVOLUTION_REBEL_UNITS_MAX">
+			<Text>Максимальное количество повстанческих юнитов = {1_Units}</Text>
+		</Row>
+		<!-- end unrest city tooltip -->
+	</Language_RU_RU>
+
+	<!-- Italian -->
+	<Language_IT_IT>
+	</Language_IT_IT>
+	<!-- German -->
+	<Language_DE_DE>
+	</Language_DE_DE>
+	<!-- Spanish -->
+	<Language_ES_ES>
+	</Language_ES_ES>
 </GameData>

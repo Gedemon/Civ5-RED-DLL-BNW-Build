@@ -40,7 +40,7 @@ function Shuffle(t)
  
   while n >= 2 do
     -- n is now the last pertinent index
-    local k = math.random(n) -- 1 <= k <= n
+    local k = Game.Rand(n, "shuffle table") -- 1 <= k <= n
     -- Quick swap
     t[n], t[k] = t[k], t[n]
     n = n - 1
@@ -78,3 +78,14 @@ function SetText ( str, tag )
 	--Dprint (query)
 end
 
+function GetCultureTypeAdj(cultureID)
+	local civAdj = "unknown"
+	local player = Players[cultureID]
+	if player and player:IsEverAlive() then
+		civAdj = player:GetCivilizationAdjective()
+	end
+	if cultureID == SEPARATIST_PLAYER then
+		civAdj = Locale.ConvertTextKey ("TXT_KEY_REVOLUTION_CULTURE_TYPE_SEPARATIST_ADJ")
+	end
+	return civAdj
+end

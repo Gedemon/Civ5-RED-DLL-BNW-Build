@@ -30,10 +30,10 @@ ALTER TABLE Units ADD COLUMN OnlySupportFire integer DEFAULT '0';
 
 
 /* Columns used when Culture Diffusion is ON and CULTURE_DIFFUSION_VARIATION_BY_ERA = 1 */
-ALTER TABLE Eras ADD COLUMN CultureMinimumForAcquisitionMod integer DEFAULT '0';	-- Percentage of CULTURE_MINIMUM_FOR_ACQUISITION
-ALTER TABLE Eras ADD COLUMN CultureDiffusionThresholdMod integer DEFAULT '0';		-- Percentage of CULTURE_DIFFUSION_THRESHOLD
-ALTER TABLE Eras ADD COLUMN CultureFlippingMaxDistance integer DEFAULT '0';			-- Replace CULTURE_FLIPPING_MAX_DISTANCE (0 = unlimited)
-ALTER TABLE Eras ADD COLUMN CultureConquestEnabled integer DEFAULT '0';				-- Replace CULTURE_CONQUEST_ENABLED (boolean = 0,1) 
+ALTER TABLE Eras ADD COLUMN CultureMinimumForAcquisitionMod integer DEFAULT '100';		-- Percentage of CULTURE_MINIMUM_FOR_ACQUISITION
+ALTER TABLE Eras ADD COLUMN CultureDiffusionThresholdMod integer DEFAULT '100';			-- Percentage of CULTURE_DIFFUSION_THRESHOLD
+ALTER TABLE Eras ADD COLUMN CultureFlippingMaxDistance integer DEFAULT '100';			-- Replace CULTURE_FLIPPING_MAX_DISTANCE (0 = unlimited)
+ALTER TABLE Eras ADD COLUMN CultureConquestEnabled integer DEFAULT '100';				-- Replace CULTURE_CONQUEST_ENABLED (boolean = 0,1) 
 
 
 /*****************************************************\
