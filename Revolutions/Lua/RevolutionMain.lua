@@ -68,7 +68,7 @@ function OnFirstTurn ()
 	InitializeTables()
 	InitializeGameOption()
 	ReserveCS()
-	Events.SerialEventGameMessagePopup.Add(UpdateCityStateScreen)
+	--Events.SerialEventGameMessagePopup.Add(UpdateCityStateScreen)
 	ShareGlobalTables()
 	UpdateRebelsTextOnLoad()
 end
@@ -76,7 +76,7 @@ end
 -- functions to call ASAP after loading a game
 function OnLoading ()
 	InitializeGameOption()
-	Events.SerialEventGameMessagePopup.Add(UpdateCityStateScreen)
+	--Events.SerialEventGameMessagePopup.Add(UpdateCityStateScreen)
 	ShareGlobalTables()
 	UpdateRebelsTextOnLoad()
 end
@@ -88,6 +88,7 @@ function OnEnterGame ()
 	-- Those functions need to wait for SaveUtils to be initialized before calling, which is done automatically after entering game to allow synchronization...
 	-- And that synchronization could happen after the current function...
 	-- So here we set the events for the next turns and call the functions for the active player on load, after manually calling share_SaveUtils()
+	--[[
 	GameEvents.PlayerDoTurn.Add(UpdateSeparatist)
 	GameEvents.PlayerDoTurn.Add(UpdateCultureRelations)
 	GameEvents.PlayerDoTurn.Add(UpdateRebels)
@@ -102,6 +103,7 @@ function OnEnterGame ()
 	----------------------------------------------------
 
 	GameEvents.CityCaptureComplete.Add(OnCityCapture)
+	--]]
 end
 Events.LoadScreenClose.Add( OnEnterGame )
 
@@ -291,17 +293,28 @@ function UpdateCultureRelationDataOnMove(iPlayer, unitID, x, y)
 	end
 end
 
+--------------------------------------------------------------
 -- Register Events
+--------------------------------------------------------------
+
 --Events.SerialEventGameDataDirty.Add(UpdateCultureRelationData)
 --Events.SerialEventTurnTimerDirty.Add(UpdateCultureRelationData)
-Events.SerialEventCityInfoDirty.Add(UpdateCultureRelationData)
 --Events.SerialEventUnitMoveToHexes.Add(UpdateCultureRelationData)
+
+Events.SerialEventCityInfoDirty.Add(UpdateCultureRelationData)
 GameEvents.UnitSetXY.Add (UpdateCultureRelationDataOnMove)
 
 Events.SerialEventCityDestroyed.Add(UpdateCultureRelationData)
 Events.SerialEventCityCaptured.Add(UpdateCultureRelationData)
 
 GameEvents.CombatEnded.Add( CheckForDeadRebel )
+
+Events.SerialEventGameMessagePopup.Add(UpdateCityStateScreen)
+
+GameEvents.PlayerDoTurn.Add(UpdateSeparatist)
+GameEvents.PlayerDoTurn.Add(UpdateCultureRelations)
+GameEvents.PlayerDoTurn.Add(UpdateRebels)
+GameEvents.PlayerDoTurn.Add(RebelAttrition)
 
 --------------------------------------------------------------
 -- Initialize when RevolutionMain is loaded

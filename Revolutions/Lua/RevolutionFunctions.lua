@@ -1740,7 +1740,7 @@ function CheckForDeadRebel (iAttackingPlayer, iAttackingUnit, attackerDamage, at
 				local cultureRelations = MapModData.AH.CultureRelations
 
 				if cultureRelations[iAttackingPlayer] and cultureRelations[iAttackingPlayer][rebelType] then
-					cultureRelations[iAttackingPlayer][rebelType] = cultureRelations[iAttackingPlayer][rebelType] + REBEL_KILLED_RELATION_CHANGE
+					cultureRelations[iAttackingPlayer][rebelType] = cultureRelations[iAttackingPlayer][rebelType] - (cultureRelations[iAttackingPlayer][rebelType] * REBEL_KILLED_RELATION_MOD / 100) -- if relation is negative, this will raise the value ("matting rebelion") if it's positive, it will lower it (raising unrest)
 				end
 				
 				SaveData( "CultureRelations", cultureRelations )

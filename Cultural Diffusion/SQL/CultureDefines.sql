@@ -7,9 +7,9 @@
 --------------------------------------------------------------
 -- 
 -- Debug settings
-INSERT INTO Defines (Name, Value) VALUES ('CULTURE_DEBUG',				0); -- if true will output debug text in the lua.log / firetuner console.
-INSERT INTO Defines (Name, Value) VALUES ('CULTURE_DEBUG_SHOW_PLOT',	1); -- if true will show the culture value and coordinate of a plot
-INSERT INTO Defines (Name, Value) VALUES ('CULTURE_DEBUG_PERFORMANCE',	0); -- if true will outpout time taken by some functions to the lua.log / firetuner console.
+INSERT INTO Defines (Name, Value) VALUES ('CULTURE_DEBUG',				0); -- if true (=1), output debug text in the lua.log / firetuner console.
+INSERT INTO Defines (Name, Value) VALUES ('CULTURE_DEBUG_SHOW_PLOT',	0); -- if true, show the culture value and coordinate of a plot in game.
+INSERT INTO Defines (Name, Value) VALUES ('CULTURE_DEBUG_PERFORMANCE',	0); -- if true, outpout time taken by some functions to the lua.log / firetuner console.
 
 --------------------------------------------------------------
 -- 
