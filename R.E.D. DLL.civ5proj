@@ -3,12 +3,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Default</Configuration>
     <ProjectGuid>{6b94aec8-0fc5-41a7-afa0-f09f2d1b53c8}</ProjectGuid>
-    <Name>R.E.D. DLL</Name>
+    <Name>R.E.D. DLL for BNW (include Revolutions and Cultural Diffusion)</Name>
     <Guid>2896c6d4-0273-4527-813b-b9ab58f0b95e</Guid>
-    <ModVersion>8</ModVersion>
+    <ModVersion>9</ModVersion>
     <Stability>Alpha</Stability>
     <Teaser>[COLOR_PLAYER_PEACH]    R.E.D. Modded DLL for BNW[NEWLINE][ENDCOLOR]    Combat events, Culture Diffusion, Revolutions, ...</Teaser>
-    <Description>[COLOR_PLAYER_LIGHT_GREEN_TEXT]R.E.D. Modded DLL for Brave New World[ENDCOLOR][NEWLINE][NEWLINE][ICON_WAR]  Combat Events[NEWLINE][ICON_ARROW_RIGHT]  Stacking and Movement[NEWLINE][ICON_CULTURE]  Culture Diffusion[NEWLINE][ICON_RESISTANCE]  Revolutions[NEWLINE][ICON_RESEARCH]  Tech Diffusion[NEWLINE][ICON_INTERNATIONAL_TRADE]  Air Trade Routes[NEWLINE][NEWLINE]Additional mods are required to activate some components.[NEWLINE][ICON_BULLET][COLOR_PLAYER_PEACH]Combat &amp; Stacking Overhaul[ENDCOLOR][NEWLINE]      Activate Support Fire, Limited Stacking, Retreat,...</Description>
+    <Description>[COLOR_PLAYER_LIGHT_GREEN_TEXT]R.E.D. Modded DLL for Brave New World[ENDCOLOR][NEWLINE][NEWLINE][ICON_WAR]  Combat Events[NEWLINE][ICON_ARROW_RIGHT]  Stacking and Movement[NEWLINE][ICON_CULTURE]  Culture Diffusion[NEWLINE][ICON_RESISTANCE]  Revolutions[NEWLINE][NEWLINE]Additional mods are required to activate some components.[NEWLINE][ICON_BULLET][COLOR_PLAYER_PEACH]Combat &amp; Stacking Overhaul[ENDCOLOR][NEWLINE]      Activate Support Fire, Limited Stacking, Retreat,...</Description>
     <Authors>Gedemon</Authors>
     <SpecialThanks>whoward69</SpecialThanks>
     <AffectsSavedGames>true</AffectsSavedGames>
@@ -68,6 +68,22 @@
         <FileName>Revolutions/Lua/ShareData.lua</FileName>
       </Content>
     </ModContent>
+    <ModBlockers>
+      <Association>
+        <Type>Mod</Type>
+        <Name>Cultural Diffusion</Name>
+        <Id>178c8703-28c7-4fdc-81b7-674a710fff51</Id>
+        <MinVersion>0</MinVersion>
+        <MaxVersion>999</MaxVersion>
+      </Association>
+      <Association>
+        <Type>Mod</Type>
+        <Name>Revolution</Name>
+        <Id>cbda59cb-f254-41ad-8d69-ea5053e048f8</Id>
+        <MinVersion>0</MinVersion>
+        <MaxVersion>999</MaxVersion>
+      </Association>
+    </ModBlockers>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">
     <OutputPath>.</OutputPath>

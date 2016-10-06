@@ -1475,24 +1475,27 @@ end
 function GiveCityToPlayer(city, player)
 	local bDebug = true
 	Dprint ("--- Giving " .. tostring(city:GetName()) .. " to " .. tostring(player:GetName()), bDebug)
+	local plot = city:Plot()
 	player:AcquireCity(city, false, true)
 
+	local newCity = plot:GetPlotCity()
+
 	Dprint ("--- Remove resistance", bDebug)
-	if city:GetResistanceTurns() > 0 then
-		city:ChangeResistanceTurns(-city:GetResistanceTurns())
+	if newCity:GetResistanceTurns() > 0 then
+		newCity:ChangeResistanceTurns(-city:GetResistanceTurns())
 	end
 
 	Dprint ("--- Remove Puppet and Razing for AI", bDebug)
 	if not player:IsHuman() then
-		city:SetPuppet(false)
-		if city:IsRazing() then
-			city:DoTask(TaskTypes.TASK_UNRAZE, -1, -1, -1)
+		newCity:SetPuppet(false)
+		if newCity:IsRazing() then
+			newCity:DoTask(TaskTypes.TASK_UNRAZE, -1, -1, -1)
 		end
 	end
 
 	Dprint ("--- Remove Occupied flag", bDebug)
-	if city:IsOccupied() then
-		city:SetOccupied(false)
+	if newCity:IsOccupied() then
+		newCity:SetOccupied(false)
 	end
 end
 
